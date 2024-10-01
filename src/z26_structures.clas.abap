@@ -24,6 +24,11 @@ CLASS z26_structures IMPLEMENTATION.
 
     addr_ref1->name = `Mrs. Jane Doe`.
 
+    out->write( addr_ref1 ).
+    """""""""""""""""""""""""""Result"""""""""""""""""""""""""""""""""""""""
+    " NAME             STREET               CITY
+    " Mrs. Jane Doe    Vegetable Lane 11    349875 Botanica
+
     " Declaring an anonymous structure/a data reference variable inline
     DATA(addr_ref2) = NEW addr_struc( name   = `Mr. Duncan Pea`
                                       street = `Vegetable Lane 11`
@@ -34,7 +39,7 @@ CLASS z26_structures IMPLEMENTATION.
 
     out->write( addr_ref2 ).
     """""""""""""""""""""""""""Result"""""""""""""""""""""""""""""""""""""""
-    "NAME            STREET               CITY
-    "Mr. John Doe    Vegetable Lane 11    349875 Botanica
+    " NAME            STREET               CITY
+    " Mr. John Doe    Vegetable Lane 11    349875 Botanica
   ENDMETHOD.
 ENDCLASS.
