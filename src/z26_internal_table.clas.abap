@@ -18,8 +18,6 @@ CLASS z26_internal_table IMPLEMENTATION.
 
     out->write( res_tab ).
 
-    out->write( |#######NEW LINE########| ).
-
     FIND FIRST OCCURRENCE OF `Z`
          IN TABLE str_table
          RESULTS DATA(res_struc)
@@ -37,7 +35,7 @@ CLASS z26_internal_table IMPLEMENTATION.
     DATA(lv_string) = line && off && len.
     out->write( lv_string ).
 
-    " Replacements in internal tables with REPLACE ... IN TABLE
+    " Replacement in internal tables with REPLACE ... IN TABLE
 
     DATA(str_table_original) = VALUE string_table( ( `aZbzZ` ) ( `cdZze` ) ( `Zzzf` ) ( `ghz` ) ).
     DATA(str_table_2) = str_table_original.
@@ -53,8 +51,6 @@ CLASS z26_internal_table IMPLEMENTATION.
 
     str_table = str_table_original.
 
-    out->write( |#######NEW LINE########| ).
-
     REPLACE FIRST OCCURRENCE OF `Z`
             IN TABLE str_table
             WITH `#`
@@ -64,13 +60,13 @@ CLASS z26_internal_table IMPLEMENTATION.
     out->write( str_table ).
     out->write( res_structure ).
 
-    out->write( |#######NEW LINE########| ).
-
-    out->write( repeat( val = `-` occ = 70 ) ).
-    "result - do 70  times
+    out->write( repeat( val = `-`
+                        occ = 70 ) ).
+    " result - do 70  times
 
     DATA(percentage) = 10 / 10 * 100.
-    out->write( |In the test runs of this example, the fastest read access with the secondary table key takes approximately | &&
-    |{ percentage DECIMALS = 2 }% of the time it takes for the fastest read using a free key.| ).
+    out->write(
+        |In the test runs of this example, the fastest read access with the secondary table key takes approximately | &&
+|{ percentage DECIMALS = 2 }% of the time it takes for the fastest read using a free key.| ).
   ENDMETHOD.
 ENDCLASS.
