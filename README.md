@@ -8,4 +8,5 @@
   <p align="center">
     Explore ABAP syntax in a nutshell & executable examples
   </p>
+  <a href="https://github.com/SAP-samples/abap-cheat-sheets/blob/main/07_String_Processing.md" target="_blank">References ABAP Cheat Sheets</a>
 </div>
